@@ -28,13 +28,13 @@ The specifications the port was generated from are in
 
 ## authelia/authelia → this port
 
-📉 668 Go lines → **543 Java lines**<br>
+📉 668 Go lines → **546 Java lines**<br>
 📁 10 files → **10 files**<br>
-⚡ 4,644 nanoseconds → **666** nanoseconds per decision, over 60 rules<br>
-⚡ 668 nanoseconds → **666** nanoseconds per decision, over 60 rules, with the original's rule-by-rule logging left out<br>
+⚡ 4,517 nanoseconds → **642** nanoseconds per decision, over 60 rules<br>
+⚡ 629 nanoseconds → **642** nanoseconds per decision, over 60 rules, with the original's rule-by-rule logging left out<br>
 🎯 92 of 92 answers matched → **92 of 92**<br>
 🔀 24 of 24 rule orders matched → **24 of 24**<br>
-🧪 not measured → **50 tests**
+🧪 not measured → **54 tests**
 
 Full method and the numbers that did *not* make this list:
 [`bench/REPORT.md`](https://github.com/TylerJewell/akka-specify-harness/blob/main/authelia-port/bench/REPORT.md).
@@ -43,11 +43,11 @@ Full method and the numbers that did *not* make this list:
 
 ## What it took to build
 
-⏱️ **0.9 hours** from the first command to the published repository, **0.9** of them active<br>
-💬 **257** exchanges with the model<br>
-✍️ **229,686** tokens written by the model, **45,906,531** counting everything sent and re-sent<br>
+⏱️ **1.2 hours** from the first command to the published repository, **1.2** of them active<br>
+💬 **343** exchanges with the model<br>
+✍️ **286,548** tokens written by the model, **74,885,433** counting everything sent and re-sent<br>
 🙋 **0** questions to a human<br>
-🧪 **50** tests
+🧪 **54** tests
 
 ```bash
 python toolkit/tokens.py --port authelia    # turns, tokens, elapsed and active time

@@ -14,12 +14,21 @@ import java.util.regex.PatternSyntaxException;
  * <p>{@code compiled} is {@code value} as a pattern, and null for the four operators that
  * do not take one. It is a component rather than something worked out inside
  * {@link #matches} so that the regular expression compiler stays out of the path a request
- * takes; it is written and read back as the same text {@code value} holds.
+ * takes.
+ *
+ * <p>It is derived from the other two components rather than accepted, so a term built in
+ * code and a term read back from what a caller sent hold the same pattern. Accepting it
+ * would make a term that arrived without one — which is every term written over the
+ * interface — carry no pattern at all while still claiming an operator that needs one.
  */
 public record QueryTerm(String operator, String key, String value, Pattern compiled) {
 
+  public QueryTerm {
+    compiled = compile(operator, value);
+  }
+
   public QueryTerm(String operator, String key, String value) {
-    this(operator, key, value, compile(operator, value));
+    this(operator, key, value, null);
   }
 
   public static QueryTerm of(String operator, String key, String value) {
